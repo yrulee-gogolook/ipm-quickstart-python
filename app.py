@@ -37,10 +37,11 @@ def token():
     ipm_grant = IpMessagingGrant(endpoint_id=endpoint, service_sid=service_sid, push_credential_sid=push_credential_sid)
     token.add_grant(ipm_grant)
 
-    # Return token info as JSON
     if no_identity:
+        # Return token info as JSON
         return jsonify(identity=identity, token=token.to_jwt())
-    else
+    else:
+        # Return token only
         return token.to_jwt()
 
 if __name__ == '__main__':
