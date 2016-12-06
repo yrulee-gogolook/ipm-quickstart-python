@@ -22,7 +22,7 @@ def token():
     identity = request.args.get('identity')
     
     # create a randomly generated username for the client if no query string passed in
-    if identity == None:
+    if identity == None or not identity:
         identity = fake.user_name()
 
     # Create a unique endpoint ID for the 
