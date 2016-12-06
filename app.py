@@ -20,9 +20,10 @@ def token():
     push_credential_sid = os.environ['TWILIO_PUSH_CREDENTIAL_SID']
 
     identity = request.args.get('identity')
+    no_identity = (identity == None or not identity)
     
     # create a randomly generated username for the client if no query string passed in
-    if identity == None or not identity:
+    if no_identity:
         identity = fake.user_name()
 
     # Create a unique endpoint ID for the 
@@ -37,7 +38,10 @@ def token():
     token.add_grant(ipm_grant)
 
     # Return token info as JSON
-    return jsonify(identity=identity, token=token.to_jwt())
+    if no_identity
+        return jsonify(identity=identity, token=token.to_jwt())
+    else
+        return token.to_jwt()
 
 if __name__ == '__main__':
     port = int(os.environ.get("PORT", 5000))
