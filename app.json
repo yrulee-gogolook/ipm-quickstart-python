@@ -24,6 +24,10 @@
     "TWILIO_API_SECRET": {
       "description": "Your Twilio API Secret",
       "required": true
+    },
+    "TWILIO_PUSH_CREDENTIAL_SID": {
+      "description": "Your Twilio Push Credential Sid",
+      "required": true
     }
   }
 }
