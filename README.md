@@ -1,3 +1,6 @@
+
+[![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
+
 # IP Messaging Quickstart for Python
 
 This application should give you a ready-made starting point for writing your
