@@ -19,8 +19,11 @@ def token():
     service_sid = os.environ['TWILIO_IPM_SERVICE_SID']
     push_credential_sid = os.environ['TWILIO_PUSH_CREDENTIAL_SID']
 
-    # create a randomly generated username for the client
-    identity = fake.user_name()
+    identity = request.args.get('identity')
+    
+    # create a randomly generated username for the client if no query string passed in
+    if identity != None:
+        identity = fake.user_name()
 
     # Create a unique endpoint ID for the 
     device_id = request.args.get('device')
