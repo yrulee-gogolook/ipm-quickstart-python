@@ -38,7 +38,7 @@ def token():
     token.add_grant(ipm_grant)
 
     # Return token info as JSON
-    if no_identity
+    if no_identity:
         return jsonify(identity=identity, token=token.to_jwt())
     else
         return token.to_jwt()
