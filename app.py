@@ -17,6 +17,7 @@ def token():
     api_key = os.environ['TWILIO_API_KEY']
     api_secret = os.environ['TWILIO_API_SECRET']
     service_sid = os.environ['TWILIO_IPM_SERVICE_SID']
+    push_credential_sid = os.environ['TWILIO_PUSH_CREDENTIAL_SID']
 
     # create a randomly generated username for the client
     identity = fake.user_name()
@@ -29,7 +30,7 @@ def token():
     token = AccessToken(account_sid, api_key, api_secret, identity)
 
     # Create an IP Messaging grant and add to token
-    ipm_grant = IpMessagingGrant(endpoint_id=endpoint, service_sid=service_sid)
+    ipm_grant = IpMessagingGrant(endpoint_id=endpoint, service_sid=service_sid, push_credential_sid=push_credential_sid)
     token.add_grant(ipm_grant)
 
     # Return token info as JSON
