@@ -1,0 +1,29 @@
+{
+  "name": "Gogolook IP Messaging Server",
+  "description": "A simple Python server to distribute capability tokens.",
+  "repository": "https://github.com/yrulee-gogolook/ipm-quickstart-python",
+  "logo": "https://whoscall.com/static/images/logo_gogolook.png",
+  "keywords": [
+    "twilio",
+    "client",
+    "mobile"
+  ],
+  "env": {
+    "TWILIO_ACCOUNT_SID": {
+      "description": "Your Twilio Account Sid",
+      "required": true
+    },
+    "TWILIO_IPM_SERVICE_SID": {
+      "description": "Your Twilio IP Messaging Service Sid",
+      "required": true
+    },
+    "TWILIO_API_KEY": {
+      "description": "Your Twilio API Key",
+      "required": true
+    },
+    "TWILIO_API_SECRET": {
+      "description": "Your Twilio API Secret",
+      "required": true
+    }
+  }
+}
